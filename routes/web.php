@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\InputanController;
 use App\Http\Controllers\LuasSegitigaController;
+use App\Http\Controllers\MahasiswaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -61,3 +62,12 @@ Route::get('latihan2', function(){
 Route::get('/inputan', [InputanController::class, 'index'])->name('inputan');
 
 Route::get('luas-segitiga', [LuasSegitigaController::class, 'index'])->name('luas-segitiga');
+
+// akses fungsi cetakNama
+Route::get('string-nama/{inputnama}',[InputanController::class, 'cetakNama'])->name('string-nama');
+
+Route::get('mahasiswa/inputnilai',[MahasiswaController::class,'create'])->name('mahasiswa.inputnilai');
+
+Route::post('mahasiswa/storenilai',[MahasiswaController::class,'store'])->name('mahasiswa.storenilai');
+
+Route::get('mahasiswa/hasilnilai',[MahasiswaController::class,'hasil'])->name('mahasiswa.hasilnilai');
